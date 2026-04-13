@@ -7,7 +7,7 @@ from visualization_msgs.msg import Marker
 class Viz(Node):
     def __init__(self):
         super().__init__('thermal_viz')
-        self.sub=self.create_subscription(PointStamped,'/thermal_point_3d',self.cb,10)
+        self.sub=self.create_subscription(PointStamped,'/thermal_target/position',self.cb,10)
         self.pub=self.create_publisher(Marker,'/thermal_point_marker',10)
 
     def cb(self,msg:PointStamped):

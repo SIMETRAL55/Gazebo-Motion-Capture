@@ -212,7 +212,7 @@ class CameraParams:
             uv = np.array([[u, v]], dtype=float).reshape(1,1,2)
             uv_n = cv2.undistortPoints(uv, self.K, self.dist_coef).reshape(2)
             x_n, y_n = uv_n
-            d_c = np.array([x_n, y_n, 1.0], dtype=float)
+            d_c = np.array([1.0, x_n, y_n], dtype=float)
             norm = np.linalg.norm(d_c)
             if norm == 0:
                 continue
