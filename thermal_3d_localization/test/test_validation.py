@@ -9,7 +9,7 @@ class Validator(Node):
     def __init__(self):
         super().__init__('validator')
         self.est=None; self.gt=None
-        self.sub_e=self.create_subscription(PointStamped,'/thermal_point_3d',self.cb_est,10)
+        self.sub_e=self.create_subscription(PointStamped,'/thermal_target/position',self.cb_est,10)
         self.sub_g=self.create_subscription(ModelStates,'/gazebo/model_states',self.cb_gt,10)
     def cb_est(self,msg):
         self.est=np.array([msg.point.x,msg.point.y,msg.point.z])
