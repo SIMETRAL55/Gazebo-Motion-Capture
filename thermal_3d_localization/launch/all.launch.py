@@ -12,7 +12,7 @@ def generate_launch_description():
            name=f'det{i}',
            parameters=[{'config':cfgs[i-1]}],
            output='screen', 
-           arguments=['--ros-args','--log-level','det{i}:=DEBUG']) for i in range(1,9)
+           arguments=['--ros-args','--log-level',f'det{i}:=DEBUG']) for i in range(1,9)
     ] + [
       Node(package='thermal_3d_localization',
            executable='triangulation_node',
