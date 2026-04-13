@@ -104,7 +104,7 @@ docker run --rm -it --network host gazebo-mocap \
 
 ## Native Install (Ubuntu 22.04 only)
 
-> ROS2 Humble requires Ubuntu 22.04 exactly. It will not install on 24.04 or later.
+> ROS2 Humble only supports Ubuntu 22.04. It will not install on any other version.
 
 ### Dependencies
 
